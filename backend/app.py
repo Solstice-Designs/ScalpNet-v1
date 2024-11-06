@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for
 import os
 import pandas as pd
+from flask import jsonify
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"  # Replace with something secure
@@ -33,6 +34,18 @@ def dashboard():
         return render_template('dashboard.html', data=data)
     except Exception as e:
         return f"Error reading data: {e}", 500
+    
+# Add a route to serve CSV data as JSON
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    try:
+        # Read the CSV data
+        df = pd.read_csv(CSV_PATH)
+        # Convert the DataFrame to JSON and return
+        return jsonify(df.to_dict(orient='records'))
+    except Exception as e:
+        return f"Error reading data: {e}", 500
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
