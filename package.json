@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "assert": "^2.1.0",
+    "axios": "^1.7.7",
+    "papaparse": "^5.4.1",
+    "plotly.js": "^2.35.2",
+    "plotly.js-dist": "^2.35.2",
+    "stream-browserify": "^3.0.0",
+    "vue-plotly": "^1.1.0"
+  }
+}

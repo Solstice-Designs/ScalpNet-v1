@@ -3,7 +3,7 @@ import pandas as pd
 
 # Define the path to the Excel file on your desktop in the folder "888/ScalpNet"
 file_path = r'C:\Users\caden\Desktop\ScalpNetPrototype\data\ScalpNet v2 (With Futures Conversion).xlsm'
-combined_csv_path = r'C:\Users\caden\Desktop\ScalpNetPrototype\data\options_data.csv'
+combined_csv_path = r'C:\Users\caden\Desktop\ScalpNetPrototype\frontend\public\options_data.csv'
 
 def extract_data_from_excel():
     try:
@@ -23,7 +23,7 @@ def extract_data_from_excel():
         df = pd.DataFrame(data, columns=headers)
 
         # Export to CSV file on the desktop in the same folder structure
-        combined_csv_path = r'C:\Users\caden\Desktop\ScalpNetPrototype\data\options_data.csv'
+        combined_csv_path = r'C:\Users\caden\Desktop\ScalpNetPrototype\frontend\public\options_data.csv'
 
         df.to_csv(combined_csv_path, index=False)
 

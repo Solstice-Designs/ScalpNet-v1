@@ -6,7 +6,7 @@ from flask import jsonify
 app = Flask(__name__)
 app.secret_key = "your_secret_key"  # Replace with something secure
 
-CSV_PATH = os.path.join(os.path.dirname(__file__), r'C:\Users\caden\Desktop\ScalpNetPrototype\data\options_data.csv')
+CSV_PATH = os.path.join(os.path.dirname(__file__), r'C:\Users\caden\Desktop\ScalpNetPrototype\frontend\public\options_data.csv')
 
 @app.route('/')
 def index():
