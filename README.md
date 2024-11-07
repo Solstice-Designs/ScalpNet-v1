@@ -1,6 +1,8 @@
-# ScalpNet Dashboard
+# ScalpNet Dashboard Prototype
 
 ScalpNet is a trading analysis platform designed to visualize and help traders pinpoint market opportunities in the options market using delta-weighted volume metrics and liquidity analysis. This prototype version uses a makeshift API in the form of an Excel sheet that outputs options data to a CSV file every 8 seconds. The front-end is built with Vue.js, Plotly, and other JavaScript libraries, while the back-end processes the CSV data, creating insights displayed in dynamic charts.
+
+![image](https://github.com/user-attachments/assets/e0508cd6-4d1c-40de-b50c-2bc672d6040c)
 
 ## Key Features
 
@@ -145,4 +147,6 @@ ScalpNet is released under the MIT License. See `LICENSE` for details.
 
 ---
 Thank you for trying out ScalpNet! Your feedback and contributions are greatly appreciated.
+
+
 
