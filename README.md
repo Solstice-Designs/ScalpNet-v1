@@ -1,8 +1,8 @@
-# ScalpNet Dashboard Prototype
+# ScalpNet Dashboard
 
 ScalpNet is a trading analysis platform designed to visualize and help traders pinpoint market opportunities in the options market using delta-weighted volume metrics and liquidity analysis. This prototype version uses a makeshift API in the form of an Excel sheet that outputs options data to a CSV file every 8 seconds. The front-end is built with Vue.js, Plotly, and other JavaScript libraries, while the back-end processes the CSV data, creating insights displayed in dynamic charts.
 
-![image](https://github.com/user-attachments/assets/e0508cd6-4d1c-40de-b50c-2bc672d6040c)
+![image](https://github.com/user-attachments/assets/c9ece471-2953-49d5-9748-2107f83228bb)
 
 ## Key Features
 
@@ -33,6 +33,7 @@ ScalpNet is a trading analysis platform designed to visualize and help traders p
 - **npm** (Usually installed with Node.js)
 - **Python** (For back-end CSV data handling)
 - **Vue.js CLI**
+- **Thinkorswim** (For running the Excel data source)
 
 ### Getting Started
 
@@ -55,13 +56,18 @@ ScalpNet is a trading analysis platform designed to visualize and help traders p
    pip install -r requirements.txt
    ```
 
-3. **Run the Back-End Data Handler**
+3. **Run the Excel File (Thinkorswim Requirement)**
+   - **Login to Thinkorswim** and ensure it is running alongside the Excel sheet.
+   - Open the Excel file used for the makeshift API (`ScalpNet v2 (With Futures Conversion).xlsm`).
+   - Press **Start** on the Excel sheet to initiate the save cycle that updates the CSV file every 4 seconds.
+
+4. **Run the Back-End Data Handler**
    Ensure that the Excel sheet is being updated by the makeshift API every 4 seconds, then run the Python back-end script to create time series data:
    ```bash
    python data_scheduler.py
    ```
 
-4. **Run the Front-End Application**
+5. **Run the Front-End Application**
    Go back to the `frontend` directory and run the Vue.js development server:
    ```bash
    cd ../frontend
@@ -131,7 +137,7 @@ ScalpNetPrototype/
 
 - **User Authentication**: Implement a robust login and registration system for multiple users.
 - **Real API Integration**: Use a proper options data API (like Schwab or similar) to replace the makeshift Excel API.
-- **Expanded Visualizations**: Introduce additional metrics like Vanna and Gamma Exposure (GEX) to provide more insights.
+- **Expanded Visualizations**: Introduce additional metrics like Gamma Exposure (GEX) and Vanna to provide more insights.
 - **Real-Time Alerts**: Add alert functionality to notify users when a liquidity event or price threshold is met.
 
 ## Known Issues
@@ -147,6 +153,4 @@ ScalpNet is released under the MIT License. See `LICENSE` for details.
 
 ---
 Thank you for trying out ScalpNet! Your feedback and contributions are greatly appreciated.
-
-
 
